@@ -1,54 +1,45 @@
-# Saved-Activity Break: Instagram Teen Account concept prototype
+# Instagram mock-up: Saved-Activity Break
 
-An unofficial, interactive prototype of Laura's proposed feature: when a teen reaches their daily limit, Instagram's break reminder suggests three offline activities drawn from posts they already saved.
+An interactive mock-up of Laura's proposed Teen Account feature. When a teen reaches their daily limit, the break reminder redirects them from endless Reels to something they already saved to try offline, such as a recipe, a workout or a painting tutorial.
 
-Everything is in one file, `index.html`. It has no other assets, needs no internet connection and makes no network requests. All accounts, captions and illustrations are fictional and drawn in code.
+**Live demo:** https://anuragmishraapplications-lab.github.io/instagram-saved-activity-break/
+
+Everything is in one file, `index.html`. It has no other assets and needs no internet connection. All accounts and content are fictional and drawn in code.
 
 ## Opening it on a Mac
 
-1. In Finder, open `Desktop › Website › instagram-break-prototype`.
-2. Double-click `index.html`. It opens in your default browser (Safari or Chrome both work).
-3. Before presenting, make the browser full screen (Control + Command + F) so the phone has the most room. The layout scales itself to fit the window.
+- **Online:** open the live demo link above.
+- **Offline:** double-click `index.html`. It opens in Safari or Chrome.
 
-If double-clicking opens a different app, right-click `index.html` and choose **Open With › Safari** (or Chrome).
+Make the browser full screen (Control + Command + F) before presenting. The layout scales itself to fit.
 
-To copy it to a classroom computer, copy just `index.html` onto a USB drive or into email/Drive. It works anywhere.
+## How the demo is laid out
 
-## Demo sequence (about 60 to 90 seconds)
+- **Journey bar (top right):** the four stages of the redirection: Scrolling → Reminder → Saved idea → Offline break. The current stage is highlighted. Click any stage to jump straight to it.
+- **Phone (centre):** the mock-up itself. A soft pink pulse marks what to tap next.
+- **Guide (right):** one sentence on the idea, what is happening at this step, and what the audience should notice. The big button moves to the next step.
 
-The phone is on the left. The **Demo Controls** panel on the right is for the presenter only, and the audience can be told it is not part of the feature.
+## Demo sequence (about 60 seconds)
 
-**Part 1: The proposed intervention (acceptance path)**
+Press the big gradient button (or the → key) four times:
 
-1. **Show ordinary scrolling.** Scroll through 3 or 4 Reels with the trackpad, mouse wheel or the ↓ key (or click **Next Reel** in the panel). Point out the usage chip in the top right of the phone and the simulated clock in the panel climbing toward 60 minutes.
-2. **Trigger the reminder.** Click **Simulate reaching 60 minutes** (or keep scrolling: it appears on its own after about 6 Reels). The break reminder slides in: "You've been scrolling for a while."
-3. **Explain the design choice in one line:** the three cards come from the teen's own Saved posts (banana bread, a 10-minute workout, a painting tutorial), so the reminder suggests something concrete to do next.
-4. **Click "Bake banana bread."** The saved activity opens on its own: ingredients, time, steps. Point out there is no feed, no autoplay and no Reel recommendations here. You can tick an ingredient to show it's interactive.
-5. **Click "I'm taking a break."** The final screen says "Enjoy your break! You can always come back later."
+1. **Scrolling.** Scroll a few Reels with the trackpad. Point out the clock on the phone and the banana bread Reel marked "In your Saved".
+2. **Next: reach the 60-minute limit.** The reminder appears with three cards taken from the teen's Saved posts.
+3. **Next: pick the banana bread.** The saved recipe opens on its own, with no feed and no autoplay.
+4. **Next: tap "I'm taking a break".** "Enjoy your break! You can always come back later."
 
-**Part 2: Teen agency (dismissal path)**
+Then press **Show the other choice: keep scrolling** to show that the teen can always dismiss the reminder and go back to Reels.
 
-6. Click **Restart prototype** on the phone (or **Reset experience** in the panel).
-7. Click **Trigger break reminder now**.
-8. Click **Continue scrolling** at the bottom. The teen goes straight back to Reels, with a short note that the app will check in again in 15 minutes.
-9. Point to the **Simulated session log** in the panel: it records one accepted reminder and one dismissed reminder. These are demo clicks only, not research data.
+You can also tap the highlighted items directly on the phone instead of using the button.
 
-## Controls reference
+## Extra controls
 
-| Action | How |
+Open **Presenter extras** in the guide for: Next Reel, trigger the reminder immediately, jump to 60 minutes, and a session log of accepted and dismissed reminders (demo clicks only, not research data).
+
+| Key | Action |
 |---|---|
-| Next / previous Reel | Trackpad or mouse wheel over the phone, ↓ / ↑ keys, or **Next Reel** |
-| Like | Click the heart, or double-click the Reel |
-| Pause a Reel | Single-click the Reel |
-| Comments, Share, More | Rail buttons open working sheets; close with ✕, the backdrop or Esc |
-| Save | Bookmark toggles saved state |
-| Trigger reminder now | **B** or panel button |
-| Jump to 60 minutes | **6** or panel button |
-| Reset | **R**, panel button, or **Restart prototype** on the final screen |
-| Clear the log | **Clear log** in the panel (Reset keeps the log so both paths can be shown) |
-
-Simulated time: the clock starts at 42 minutes, each new Reel adds 3 minutes, and time runs 5× faster while Reels play. It pauses during the reminder and activity screens. After "Continue scrolling," the next reminder is set 15 simulated minutes later.
-
-## What the prototype does not claim
-
-This is a design visualization for a feature Instagram could pilot and evaluate. It does not show that the intervention reduces use or improves well-being, and the session log is not evidence of either.
+| → | Next step |
+| ↓ / ↑ | Next / previous Reel |
+| B | Show the reminder now |
+| 6 | Jump to 60 minutes |
+| R | Start over |

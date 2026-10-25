@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Saved-Activity Break Prototype</title>
+<title>Instagram Mock-up</title>
 <style>
 :root{
   --s:1;
@@ -35,8 +35,20 @@ svg{display:block}
 .brand-mark svg{width:22px;height:22px}
 .brand h1{margin:0;font-size:18px;letter-spacing:-.01em}
 .brand p{margin:2px 0 0;font-size:13px;color:#5f5d6b}
-.badge-unofficial{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#7a2350;
-  background:#fff;border:1.5px dashed #d62976;border-radius:999px;padding:7px 14px}
+.journey{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.journey button{display:flex;align-items:center;gap:9px;padding:6px 15px 6px 7px;border-radius:999px;background:#fff;border:1px solid #e6e3ee;
+  text-align:left;white-space:nowrap;transition:background .2s,border-color .2s,box-shadow .2s}
+.journey button:hover{border-color:#cfc9de}
+.j-num{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;background:#efedf4;color:#6b6880;flex:none}
+.j-num svg{width:15px;height:15px}
+.j-txt b{display:block;font-size:13.5px;line-height:1.2}
+.j-txt small{display:block;font-size:11.5px;color:#8a8899;line-height:1.2}
+.j-arrow{color:#b9b6c6}
+.j-arrow svg{width:18px;height:18px}
+.journey button.is-done .j-num{background:#2fb36d;color:#fff}
+.journey button.current{background:var(--ig-grad-soft);border-color:transparent;color:#fff;box-shadow:0 8px 20px -10px rgba(214,41,118,.6)}
+.journey button.current .j-num{background:#fff;color:#d62976}
+.journey button.current small{color:rgba(255,255,255,.88)}
 .stage{flex:1;display:flex;align-items:center;justify-content:center;gap:44px;padding:10px 24px 12px}
 .footer{text-align:center;font-size:12px;color:#77758a;padding:0 16px 14px}
 
@@ -301,6 +313,24 @@ svg{display:block}
 .lg.empty{color:#8a8899}
 .p-disclaimer{margin:8px 0 0;font-size:11.5px;line-height:1.4;color:#8a8899}
 
+/* Presenter guide */
+.idea{background:linear-gradient(135deg,#fff3ea,#f5ecff);border-radius:14px;padding:12px 14px}
+.idea p{margin:4px 0 0;font-size:14.5px;line-height:1.4;font-weight:600;color:#2a2440}
+.step-count{font-size:12px;font-weight:700;color:#a0306b;text-transform:uppercase;letter-spacing:.06em}
+.step-card h2{margin:4px 0 6px;font-size:22px;letter-spacing:-.02em}
+.step-card > p{margin:0;font-size:14.5px;line-height:1.45;color:#3d3a4f}
+.notice{margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.notice li{display:flex;gap:9px;font-size:13.5px;line-height:1.4;color:#3d3a4f;background:#f8f7fb;border-radius:10px;padding:8px 10px}
+.notice li::before{content:"";flex:none;width:7px;height:7px;margin-top:6px;border-radius:50%;background:var(--ig-grad-soft)}
+.pbtn.big{min-height:52px;font-size:15.5px}
+.mini-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#6b6880}
+.mini-row b{color:var(--ink);font-variant-numeric:tabular-nums}
+.more summary{cursor:pointer;font-size:13px;font-weight:600;color:#4f5bd5;padding:2px 0}
+.more-inner{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.more-inner .p-bar{margin:0}
+.hint{animation:hint 1.8s ease-out infinite}
+@keyframes hint{0%{box-shadow:0 0 0 0 rgba(214,41,118,.55)}70%{box-shadow:0 0 0 12px rgba(214,41,118,0)}100%{box-shadow:0 0 0 0 rgba(214,41,118,0)}}
+
 @media (max-width:1000px){
   .stage{flex-direction:column;gap:24px}
   .panel{max-height:none;width:min(414px,100%)}
@@ -317,11 +347,19 @@ svg{display:block}
     <div class="brand">
       <div class="brand-mark" data-i="sun" aria-hidden="true"></div>
       <div>
-        <h1>Saved-Activity Break</h1>
-        <p>Teen Account feature concept · Youth Online Safety · Columbia SIPA</p>
+        <h1>Instagram mock-up</h1>
+        <p>Saved-Activity Break · a Teen Account feature idea</p>
       </div>
     </div>
-    <div class="badge-unofficial" role="note">Unofficial concept prototype · Not affiliated with Instagram or Meta</div>
+    <ol class="journey" id="journey" aria-label="Demo steps">
+      <li><button data-step="1"><span class="j-num">1</span><span class="j-txt"><b>Scrolling</b><small>Endless Reels</small></span></button></li>
+      <li class="j-arrow" aria-hidden="true" data-i="arrow"></li>
+      <li><button data-step="2"><span class="j-num">2</span><span class="j-txt"><b>Reminder</b><small>At the daily limit</small></span></button></li>
+      <li class="j-arrow" aria-hidden="true" data-i="arrow"></li>
+      <li><button data-step="3"><span class="j-num">3</span><span class="j-txt"><b>Saved idea</b><small>From the teen's Saved</small></span></button></li>
+      <li class="j-arrow" aria-hidden="true" data-i="arrow"></li>
+      <li><button data-step="4"><span class="j-num">4</span><span class="j-txt"><b>Offline break</b><small>Off the app</small></span></button></li>
+    </ol>
   </header>
 
   <main class="stage">
@@ -414,34 +452,39 @@ svg{display:block}
       </div>
     </div>
 
-    <aside class="panel" aria-label="Demo controls">
-      <div class="panel-head">
-        <div><div class="eyebrow">Presenter only</div><h2>Demo Controls</h2></div>
-        <span class="panel-tag">Not part of the concept</span>
+    <aside class="panel" aria-label="Presenter guide">
+      <div class="idea">
+        <div class="eyebrow">The idea</div>
+        <p>When the daily limit hits, redirect the teen from endless Reels to something they already saved to try offline.</p>
       </div>
 
-      <section>
-        <div class="p-label">Simulated usage today</div>
-        <div class="p-time" id="p-time">42m 00s</div>
+      <section class="step-card" aria-live="polite">
+        <div class="step-count" id="g-count">Step 1 of 4</div>
+        <h2 id="g-title"></h2>
+        <p id="g-text"></p>
+        <ul class="notice" id="g-notice"></ul>
+      </section>
+
+      <div class="p-buttons">
+        <button class="pbtn primary big" id="btn-step"><span id="g-next">Next</span><kbd>→</kbd></button>
+        <button class="pbtn" id="btn-alt">Show the other choice: keep scrolling</button>
+      </div>
+
+      <div class="mini-row">
+        <span>Simulated time today: <b id="p-time">42m 00s</b></span>
+        <button class="link" id="btn-reset">Start over</button>
+      </div>
+
+      <details class="more">
+        <summary>Presenter extras: more controls and the session log</summary>
+        <div class="more-inner">
         <div class="p-bar"><i id="p-bar"></i></div>
-        <div class="p-sub"><span id="p-next">Reminder at 1h 00m</span><span id="p-viewed">1 Reel viewed</span></div>
-        <p class="p-hint">Each new Reel adds 3 simulated minutes, and the clock runs 5× faster while Reels play. The reminder appears on its own at 60 minutes.</p>
-      </section>
-
-      <section class="p-buttons">
+        <div class="p-sub"><span id="p-next">Next reminder at 1h 00m</span><span id="p-viewed">1 Reel viewed</span></div>
+        <p class="p-hint" style="margin:0">Each new Reel adds 3 simulated minutes, and the clock runs 5× faster while Reels play. The reminder also appears on its own at 60 minutes.</p>
         <button class="pbtn" id="btn-next">Next Reel <kbd>↓</kbd></button>
-        <button class="pbtn primary" id="btn-trigger">Trigger break reminder now <kbd>B</kbd></button>
+        <button class="pbtn" id="btn-trigger">Trigger break reminder now <kbd>B</kbd></button>
         <button class="pbtn" id="btn-60">Simulate reaching 60 minutes <kbd>6</kbd></button>
-        <button class="pbtn" id="btn-reset">Reset experience <kbd>R</kbd></button>
-      </section>
-
-      <section>
-        <div class="p-label">On screen now</div>
-        <div class="p-screen"><b id="p-screen-name">Reels feed</b><p id="p-screen-note"></p></div>
-      </section>
-
-      <section>
-        <div class="p-row"><div class="p-label">Simulated session log</div><button class="link" id="btn-clear">Clear log</button></div>
+        <div class="p-row" style="margin-top:6px"><div class="p-label">Simulated session log</div><button class="link" id="btn-clear">Clear log</button></div>
         <div class="p-stats">
           <div class="stat"><b id="st-shown">0</b><span>Reminders shown</span></div>
           <div class="stat"><b id="st-chosen">0</b><span>Activity chosen</span></div>
@@ -450,11 +493,12 @@ svg{display:block}
         </div>
         <ol class="p-log" id="p-log" aria-live="polite"></ol>
         <p class="p-disclaimer">These are demo clicks recorded in this browser tab only. They are not research data and say nothing about whether the feature works.</p>
-      </section>
+        </div>
+      </details>
     </aside>
   </main>
 
-  <footer class="footer">Fictional accounts, captions and illustrations · Simulated time and events · Runs offline with no login, tracking or network requests</footer>
+  <footer class="footer">Instagram mock-up · Fictional accounts and content</footer>
 </div>
 
 <script>
@@ -472,6 +516,7 @@ const I = {
   more:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/></svg>',
   camera:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8.5A2.5 2.5 0 0 1 5.5 6H7l1.5-2h7L17 6h1.5A2.5 2.5 0 0 1 21 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="4"/></svg>',
   chevDown:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>',
+  arrow:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
   chevLeft:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"/></svg>',
   home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M9 16.5a3 3 0 0 1 6 0V22h7V11.5L12 2 2 11.5V22h7z"/></svg>',
   search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="7.5"/><path d="M16.5 16.5 22 22"/></svg>',
@@ -993,13 +1038,49 @@ sheet.addEventListener('submit', e => {
 backdrop.addEventListener('click', closeSheet);
 
 /* ---------- Screens ---------- */
-const SCREEN_INFO = {
-  reels:   ['Reels feed (ordinary scrolling)', 'Scroll with the trackpad, mouse wheel or the ↓ key. Double-click a Reel to like it, single-click to pause. Each new Reel adds about 3 simulated minutes.'],
-  break:   ['Break reminder (the proposed intervention)', 'At the daily limit, Instagram suggests three offline activities drawn from posts this teen already saved. "Continue scrolling" stays available.'],
-  activity:['Saved activity (isolated view)', 'A single saved post with no feed, no autoplay and no Reel recommendations. The main action is to start the break.'],
-  done:    ['Break confirmed', 'A clear, positive exit point. Press Restart or Reset, then show the "Continue scrolling" path.']
+const STEPS = {
+  1:{ title:'Endless scrolling',
+      text:'A teen is scrolling Reels. There is no natural stopping point, and the minutes add up.',
+      notice:['The clock at the top of the phone shows time on Instagram today.',
+              'The banana bread Reel is marked "In your Saved". The teen bookmarked it weeks ago.'],
+      next:'Next: reach the 60-minute limit' },
+  2:{ title:'A reminder that redirects',
+      text:'At the daily limit, Instagram offers three things this teen already saved to try offline, so the break comes with a plan.',
+      notice:["Every card comes from the teen's own Saved posts.",
+              '"Continue scrolling" stays available. The teen decides.'],
+      next:'Next: pick the banana bread' },
+  3:{ title:'The saved idea, on its own',
+      text:'One tap opens the saved recipe by itself, ready to use away from the screen.',
+      notice:['No feed, no autoplay and no more Reels on this page.',
+              'Ingredients and steps are right here, so the teen can start now.'],
+      next:"Next: tap \"I'm taking a break\"" },
+  4:{ title:'Off to an offline break',
+      text:'The teen leaves the app with something real to do, and a friendly note that they can come back anytime.',
+      notice:['The exit is positive, with no guilt or lockout.',
+              'Press "Show the other choice" to see what happens when a teen keeps scrolling.'],
+      next:'Start over' }
 };
+const STEP_OF = { reels:1, break:2, activity:3, done:4 };
 const FOCUS = { break:'#break-title', activity:'#act-title', done:'#done-title' };
+
+function renderGuide(){
+  const n = STEP_OF[state.screen], s = STEPS[n];
+  $('#g-count').textContent = `Step ${n} of 4`;
+  $('#g-title').textContent = s.title;
+  $('#g-text').textContent = s.text;
+  $('#g-notice').innerHTML = s.notice.map(t => `<li>${esc(t)}</li>`).join('');
+  $('#g-next').textContent = s.next;
+  document.querySelectorAll('#journey [data-step]').forEach(b => {
+    const k = +b.dataset.step;
+    b.classList.toggle('current', k === n);
+    b.classList.toggle('is-done', k < n);
+    b.querySelector('.j-num').innerHTML = k < n ? I.check : k;
+    if (k === n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+  });
+  document.querySelectorAll('.hint').forEach(e => e.classList.remove('hint'));
+  const target = { 1:'.usage', 2:`[data-activity="${state.activity || 'bread'}"]`, 3:'#btn-take', 4:'#btn-restart' }[n];
+  $(target)?.classList.add('hint');
+}
 
 function go(s){
   state.screen = s;
@@ -1012,6 +1093,7 @@ function go(s){
   screenEl.classList.toggle('light', s !== 'reels');
   screenEl.classList.toggle('frozen', s !== 'reels');
   render();
+  renderGuide();
   if (s === 'reels') feed.focus({ preventScroll:true });
   else setTimeout(() => $(FOCUS[s]).focus({ preventScroll:true }), 60);
 }
@@ -1047,7 +1129,7 @@ function openActivity(k){
   state.counts.chosen++;
   addLog(`Accepted: chose "${a.title}"`, 'accepted');
   $('#act-hero').innerHTML = sceneSVG(a.scene, a.hero);
-  $('#act-creator').innerHTML = `${avatar(a.creator, a.hue)}<div><b>${a.creator}</b><span>${a.savedWhen} · Offline ideas</span></div>`;
+  $('#act-creator').innerHTML = `${avatar(a.creator, a.hue)}<div><b>${a.creator}</b><span>You saved this from their Reel · ${a.savedWhen.replace('Saved ', '')}</span></div>`;
   $('#act-title').textContent = a.title;
   $('#act-chips').innerHTML = `<span class="chip">${I.clock}${a.time}</span><span class="chip">${I.level}${a.level}</span><span class="chip green">${I.leaf}Offline</span>`;
   $('#act-about').textContent = a.about;
@@ -1073,25 +1155,53 @@ $('#act-list').addEventListener('click', e => {
   const c = e.target.closest('[data-activity]');
   if (c) openActivity(c.dataset.activity);
 });
-$('#btn-continue').addEventListener('click', () => {
+function dismiss(){
+  if (state.screen !== 'break') return;
   state.counts.dismissed++;
   addLog('Dismissed: chose "Continue scrolling"', 'dismissed');
   state.nextLimit = state.sim + SNOOZE;
   go('reels');
   toast("No problem. We'll check in again in 15 minutes.");
-});
-$('#btn-back').addEventListener('click', () => {
-  addLog('Went back to the suggestions', '');
-  go('break');
-});
-$('#btn-take').addEventListener('click', () => {
+}
+function takeBreak(){
   const a = ACTIVITIES[state.activity];
   state.counts.breaks++;
   addLog(`Break taken: "${a.title}"`, 'accepted');
   $('#done-card').innerHTML = `<span class="act-thumb">${sceneSVG(a.scene, a.thumb)}</span><div><b>${a.title}</b><span>${a.short} · from your Saved</span></div>`;
   go('done');
+}
+$('#btn-continue').addEventListener('click', dismiss);
+$('#btn-back').addEventListener('click', () => {
+  addLog('Went back to the suggestions', '');
+  go('break');
 });
+$('#btn-take').addEventListener('click', takeBreak);
 $('#btn-restart').addEventListener('click', reset);
+
+/* ---------- Guided steps ---------- */
+function nextStep(){
+  ({ reels:jump60, break:() => openActivity(state.activity || 'bread'), activity:takeBreak, done:reset })[state.screen]();
+}
+function jumpTo(n){
+  if (n === STEP_OF[state.screen]) return;
+  if (n === 1) reset();
+  else if (n === 2) state.screen === 'reels' ? showBreak('manual') : go('break');
+  else if (n === 3) openActivity(state.activity || 'bread');
+  else { state.activity = state.activity || 'bread'; takeBreak(); }
+}
+let altT;
+function showAlt(){
+  clearTimeout(altT);
+  if (state.screen === 'break') { dismiss(); return; }
+  showBreak('manual');
+  altT = setTimeout(dismiss, 1500);
+}
+$('#btn-step').addEventListener('click', nextStep);
+$('#btn-alt').addEventListener('click', showAlt);
+$('#journey').addEventListener('click', e => {
+  const b = e.target.closest('[data-step]');
+  if (b) jumpTo(+b.dataset.step);
+});
 
 document.querySelectorAll('[data-toast]').forEach(b => b.addEventListener('click', () => toast(b.dataset.toast)));
 $('#tab-reels').addEventListener('click', () => toast("You're on Reels."));
@@ -1113,15 +1223,12 @@ function renderLog(){
 }
 function render(){
   $('#usage-chip').textContent = `${fmtMin(state.sim)} today`;
-  $('#p-time').innerHTML = `${fmtLong(state.sim)}<small>simulated</small>`;
+  $('#p-time').textContent = fmtLong(state.sim);
   $('#p-bar').style.width = Math.min(100, state.sim / state.nextLimit * 100) + '%';
   $('#p-next').textContent = state.sim >= state.nextLimit && state.screen !== 'reels'
     ? `Limit reached at ${fmtMin(state.nextLimit)}` : `Next reminder at ${fmtMin(state.nextLimit)}`;
   const n = state.maxSeen + 1;
   $('#p-viewed').textContent = `${n} Reel${n === 1 ? '' : 's'} viewed`;
-  const [name, note] = SCREEN_INFO[state.screen];
-  $('#p-screen-name').textContent = name;
-  $('#p-screen-note').textContent = note;
 }
 
 function trigger(){
@@ -1149,12 +1256,13 @@ $('#btn-clear').addEventListener('click', () => {
 
 document.addEventListener('keydown', e => {
   if (e.metaKey || e.ctrlKey || e.altKey) return;
-  if (e.target.matches('input, textarea')) return;
+  if (e.target.matches?.('input, textarea')) return;
   if (e.key === 'Escape' && state.sheet){ closeSheet(); return; }
   if (state.screen === 'reels' && !state.sheet){
     if (['ArrowDown','PageDown','j'].includes(e.key)){ e.preventDefault(); step(1); return; }
     if (['ArrowUp','PageUp','k'].includes(e.key)){ e.preventDefault(); step(-1); return; }
   }
+  if (e.key === 'ArrowRight' && !state.sheet && !e.target.matches?.('summary')){ e.preventDefault(); nextStep(); return; }
   const k = e.key.toLowerCase();
   if (k === 'b') trigger();
   else if (k === '6') jump60();
@@ -1188,6 +1296,7 @@ reelEls()[0].classList.add('is-current');
 ['break','activity','done'].forEach(k => $('#' + k).inert = true);
 fit();
 render();
+renderGuide();
 renderLog();
 })();
 </script>
