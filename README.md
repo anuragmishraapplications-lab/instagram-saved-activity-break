@@ -2,7 +2,7 @@
 
 An interactive mock-up of Laura's proposed Teen Account feature. When a teen reaches their daily limit, the break reminder redirects them from endless Reels to something they already saved to try offline, such as a recipe, a workout or a painting tutorial.
 
-**Live demo:** https://anuragmishraapplications-lab.github.io/instagram-saved-activity-break/
+**Live demo:** https://anuragmishraapplications-lab.github.io/insta-break/
 
 Everything is in one file, `index.html`. It has no other assets and needs no internet connection. All accounts and content are fictional and drawn in code.
 
